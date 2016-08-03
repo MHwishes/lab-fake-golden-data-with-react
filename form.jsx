@@ -37,6 +37,26 @@ var Editor = React.createClass({
     }
 });
 
+var Right = React.createClass({
+    add:function () {
+        const element=$("input[name=input]").val();
+        this.props.onAdd(element);
+    },
+    render: function () {
+        return (
+            <div>
+                <input type="radio" name="input" value="text"/>文本框
+                <input type="radio"name="input" value="date"/>日期
+                <button onClick={this.add}>+</button>
+            </div>
+
+        )
+    }
+});
+
+
+
+
 var Preview = React.createClass({
     render: function () {
         const text=this.state.elements.map(ele=>{
