@@ -37,4 +37,19 @@ var Editor = React.createClass({
     }
 });
 
+var Preview = React.createClass({
+    render: function () {
+        const text=this.state.elements.map(ele=>{
+            <div><input  type={ele}/></div>
+        })
+        return (
+            <div>
+                {text}
+                <button>提交</button>
+            </div>
+
+        )
+    }
+});
+
 ReactDOM.render(<App/>,document.getElementById('form'))
